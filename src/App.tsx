@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from './hooks/useAuth';
+import LoginPage from './components/auth/LoginPage';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import DashboardStats from './components/dashboard/DashboardStats';
@@ -59,14 +60,7 @@ function App() {
   }
 
   if (!user) {
-    return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Welcome to TimeTracker</h1>
-          <p className="text-gray-600">Please log in to continue</p>
-        </div>
-      </div>
-    );
+    return <LoginPage />;
   }
 
   const renderContent = () => {
